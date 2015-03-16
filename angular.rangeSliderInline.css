@@ -1,9 +1,10 @@
 /**
- * 	Angular RangeSlider SCSS
+ * 	Angular RangeSliderInline SCSS
  * 
- *	Version: 0.0.13
+ *	Version: 0.0.14
  *
  * 	Author: Daniel Crisp, danielcrisp.com
+ *		Marco Solari <marcosolari@gmail.com>
  *
  * 	The rangeSlider has been styled to match the default styling
  * 	of form elements styled using Twitter's Bootstrap
@@ -353,4 +354,30 @@
 /* line 361, scss/_rangeSlider.scss */
 body.ngrs-touching {
   -ms-touch-action: none;
+}
+
+
+/*------------------------------------*\
+    ADDITIONS FOR INLINE HANDLING
+\*------------------------------------*/
+.ngrs-range-slider {
+  margin: 0;
+  padding-right: 10px;
+}
+.ngrs-range-slider .ngrs-runner {
+  height: 22px;
+}
+.ngrs-range-slider .ngrs-handle {
+  width: 24px;
+  text-align: right;
+  padding-right: 6px;
+}
+.ngrs-range-slider .ngrs-handle-min i {
+  background-image: url("");
+}
+.ngrs-range-slider .ngrs-handle-max i {
+  background-image: url("");
+}
+.ngrs-value-inline {
+  font-size: .9em;
 }
