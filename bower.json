@@ -1,6 +1,6 @@
 {
   "name": "angular-rangeslider-inline",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "main": [
     "./angular.rangeSliderInline.js",
     "./angular.rangeSliderInline.css"
