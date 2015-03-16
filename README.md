@@ -11,52 +11,51 @@ It has been styled to match form elements styled by [Twitter's Bootstrap CSS fra
 - Angular (v1.0.8+)
 - jQuery (v1.7+)
 
-Looking for collaborators
--------------------------
+Description
+-----------
 
 This directive (originally by [danielcrisp](https://github.com/danielcrisp)) was written for a project completed way back in 2013.
 
 This directive has been improved (or just changed, you will tell ..) from the original one to be usable "inline", i.e., the minimum and maximum values are displayed on the cursors, insted of on elements external to the slider.
 This is a behavoir useful when you need to use the slider, say, in a compact form.
+
 You should be aware, though, that values will have to be of a reasonable length (say from values -999 to 999). if they are longer (say floats with some digits), teir valu will overflow the cursors borders, resulting in a sub-optimal visual effect.
+
+The changes have been currently tested only for the horizontal version.
 
 Installation
 ------------
 
 Download the files from Github or use Bower:
 
-    $ bower install angular-rangeslider
+    $ bower install angular-rangeslider-inline
 
 Add the JS and CSS to your page:
 
-    <script src="bower_components/angular-rangeslider/angular.rangeSlider.js"></script>
-    <link rel="stylesheet" href="bower_components/angular-rangeslider/angular.rangeSlider.css">
+    <script src="bower_components/angular-rangeslider-inline/angular.rangeSliderInline.js"></script>
+    <link rel="stylesheet" href="bower_components/angular-rangeslider-inline/angular.rangeSliderInline.css">
 
-Add the `ui-rangeSlider` module as a dependency for your app: `angular.module('myApp', ['ui-rangeSlider']);`
+Add the `ui-rangeSliderInline` module as a dependency for your app: `angular.module('myApp', ['ui-rangeSliderInline']);`
 
 Bootstrap is not required.
-
-If you use SCSS & Compass you can include the source SCSS directly into your project CSS if you add `bower_components` to your include path:
-
-    @import "angular-rangeslider/scss/rangeSlider"; // requires Compass
 
 Demo
 ----
 
- - [Demo - Angular v.1.1.*](http://marcolino.github.io/angular-rangeslider/demo/)
- - [Legacy Demo - Angular v.1.0.*](http://marcolino.github.io/angular-rangeslider/demo/legacy.html)
+ - [Demo - Angular v.1.1.*](http://marcolino.github.io/angular-rangeslider-inline/demo/)
+ - [Legacy Demo - Angular v.1.0.*](http://marcolino.github.io/angular-rangeslider-inline/demo/legacy.html)
 
 GitHub Pages
 ------------
 
-[Project page](http://danielcrisp.github.io/angular-rangeslider/)
+[Project page](http://marcolino.github.io/angular-rangeslider-inline/)
 
 Quick example
 -------------
 
 A basic slider with a range of 0 to 100:
 
-    <div range-slider min="0" max="100" model-min="min" model-max="max"></div>
+    <div range-slider-inline min="0" max="100" model-min="min" model-max="max"></div>
 
 As the handles are moved the model values `min` and `max` will be updated in the parent controller.
 
@@ -65,7 +64,7 @@ As the handles are moved the model values `min` and `max` will be updated in the
 Options
 -------
 
-Options are set as attributes on the `<div range-slider>`
+Options are set as attributes on the `<div range-slider-inline>`
 
 ### `=` two-way bindings
 
@@ -114,7 +113,7 @@ The following properties are present in the scope:
     
 So we can include the directive in the HTML like this:
 
-    <div range-slider min="minPrice" max="maxPrice" model-min="userMinPrice" model-max="userMaxPrice" step="5"></div>
+    <div range-slider-inline min="minPrice" max="maxPrice" model-min="userMinPrice" model-max="userMaxPrice" step="5"></div>
 
 As the user moves the min and max handles the `userMinPrice` and `userMaxPrice` will be updated in increments of `5` in real-time in the model.
 
@@ -122,15 +121,15 @@ As the user moves the min and max handles the `userMinPrice` and `userMaxPrice` 
 
 Continuing from the example above we can format the values displayed to the user as currency.
 
-    <div range-slider min="minPrice" max="maxPrice" model-min="userMinPrice" model-max="userMaxPrice" step="5" filter="currency"></div>
+    <div range-slider-inline min="minPrice" max="maxPrice" model-min="userMinPrice" model-max="userMaxPrice" step="5" filter="currency"></div>
 
 This will automatically be localised by Angular, but we can force it to be USD by passing this as an option:
 
-    <div range-slider min="minPrice" max="maxPrice" model-min="userMinPrice" model-max="userMaxPrice" step="5" filter="currency" filter-options="USD$"></div>
+    <div range-slider-inline min="minPrice" max="maxPrice" model-min="userMinPrice" model-max="userMaxPrice" step="5" filter="currency" filter-options="USD$"></div>
 
 Alternatively you can use Angular's filter notation directly in the `filter` attribute, such as `filter="currency:'GBP £'"`, which would result in values like this: `GBP £7,500.00`.
 
-    <div range-slider min="minPrice" max="maxPrice" model-min="userMinPrice" model-max="userMaxPrice" step="5" filter="currency:'GBP £'"></div>
+    <div range-slider-inline min="minPrice" max="maxPrice" model-min="userMinPrice" model-max="userMaxPrice" step="5" filter="currency:'GBP £'"></div>
 
 **NOTE:** If the `filter-options` attribute is defined you **cannot** use Angular filter notation. You must only use the filter name in the `filter` attribute.
 
@@ -142,17 +141,17 @@ Simply add one of the following values to the `orientation` attribute: 'vertical
 
 This will create a vertical slider that is centred in it's parent element:
 
-    <div range-slider min="0" max="100" model-min="min" model-max="max" orientation="vertical"></div>
+    <div range-slider-inline min="0" max="100" model-min="min" model-max="max" orientation="vertical"></div>
 
 ![Vertical example](screenshots/vertical.png)
 
 To left-align the slider use 'vertical left':
 
-    <div range-slider min="0" max="100" model-min="min" model-max="max" orientation="vertical left"></div>
+    <div range-slider-inline min="0" max="100" model-min="min" model-max="max" orientation="vertical left"></div>
     
 And to right-align the slider use 'vertical right':
 
-    <div range-slider min="0" max="100" model-min="min" model-max="max" orientation="vertical right"></div>
+    <div range-slider-inline min="0" max="100" model-min="min" model-max="max" orientation="vertical right"></div>
 
 ### Disabling the slider
 
@@ -173,7 +172,7 @@ And then specify the property using the disabled attribute:
 
 If you would like only allow setting one value, effectively creating a single-value silder, set the pin-handle attribute to 'min' or 'max'. You may then omit the corresponding model-xxx property:
 
-    <div range-slider min="0" max="100" model-max="max" pin-handle="min></div>
+    <div range-slider-inline min="0" max="100" model-max="max" pin-handle="min></div>
     
 ![Pinned example](screenshots/pinned.png)
 
@@ -181,12 +180,12 @@ If you would like only allow setting one value, effectively creating a single-va
 
 Set the attach-handle-values attribute to true to have the values move with the slider handles. This works for either horizontal:
 
-    <div range-slider min="0" max="100" model-min="min" model-max="max" attach-handle-values="true"></div>
+    <div range-slider-inline min="0" max="100" model-min="min" model-max="max" attach-handle-values="true"></div>
 ![Attached handles horizontal example](screenshots/attached-handles-horizontal.png)
 
 or vertical:
 
-    <div range-slider min="0" max="100" model-min="min" model-max="max" attach-handle-values="true" orientation="vertical"></div>
+    <div range-slider-inline min="0" max="100" model-min="min" model-max="max" attach-handle-values="true" orientation="vertical"></div>
 ![Attached handles vertical example](screenshots/attached-handles-vertical.png)
 
 Angular 1.0.* Support
@@ -196,13 +195,13 @@ If you use this directive with an older version of Angular (e.g. v1.0.*) then th
 
 This basically changes the optional isolate scope properties `disabled`, `modelMin` and `modelMax` so that they are no longer optional and must always be defined on the directive element.
 
-So, this would give an error (`Error: Non-assignable model expression: undefined (directive: rangeSlider)`) if you were using Angular v1.0.8:
+So, this would give an error (`Error: Non-assignable model expression: undefined (directive: rangeSliderInline)`) if you were using Angular v1.0.8:
 
-    <div range-slider min="0" max="100" model-min="demo1.min" model-max="demo1.max"></div>
+    <div range-slider-inline min="0" max="100" model-min="demo1.min" model-max="demo1.max"></div>
 
 However this would work correctly:
 
-    <div range-slider min="0" max="100" model-min="demo1.min" model-max="demo1.max" disabled="false"></div>
+    <div range-slider-inline min="0" max="100" model-min="demo1.min" model-max="demo1.max" disabled="false"></div>
 
 Note, only tested in v1.0.8
 
