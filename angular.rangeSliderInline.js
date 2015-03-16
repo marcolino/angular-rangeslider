@@ -46,11 +46,11 @@
      * Touch friendly.
      * @directive
      */
-    angular.module('ui-rangeSlider', [])
-        .directive('rangeSlider', ['$document', '$filter', '$log', function($document, $filter, $log) {
+    angular.module('ui-rangeSliderInline', [])
+        .directive('rangeSliderInline', ['$document', '$filter', '$log', function($document, $filter, $log) {
 
             // test for mouse, pointer or touch
-            var eventNamespace = '.rangeSlider',
+            var eventNamespace = '.rangeSliderInline',
 
                 defaults = {
                     disabled: false,
@@ -151,8 +151,8 @@
                 replace: true,
                 template: ['<div class="ngrs-range-slider">',
                     '<div class="ngrs-runner">',
-                    '<div class="ngrs-handle ngrs-handle-min"><i></i></div>',
-                    '<div class="ngrs-handle ngrs-handle-max"><i></i></div>',
+                    '<div class="ngrs-handle ngrs-handle-min"><i class="ngrs-value-inline">{{filteredModelMin}}</i></div>',
+                    '<div class="ngrs-handle ngrs-handle-max"><i class="ngrs-value-inline">{{filteredModelMax}}</i></div>',
                     '<div class="ngrs-join"></div>',
                     '</div>',
                     '<div class="ngrs-value-runner">',
