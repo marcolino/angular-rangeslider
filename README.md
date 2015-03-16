@@ -1,6 +1,6 @@
 angular-rangeslider
 ===================
-_Current version: 0.0.13_
+_Current version: 0.0.14_
 
 Angular RangeSlider is a directive that creates an interactive slider that allows a user to change model values.
 
@@ -14,9 +14,11 @@ It has been styled to match form elements styled by [Twitter's Bootstrap CSS fra
 Looking for collaborators
 -------------------------
 
-This directive was written for a project completed way back in 2013. I've not needed to use it since and have no plans (or time) to continue development / maintenance.
+This directive (originally by [danielcrisp](https://github.com/danielcrisp)) was written for a project completed way back in 2013.
 
-If anyone would like to become a collaborator please let me know: [@danielcrisp82](https://twitter.com/danielcrisp82)
+This directive has been improved (or just changed, you will tell ..) from the original one to be usable "inline", i.e., the minimum and maximum values are displayed on the cursors, insted of on elements external to the slider.
+This is a behavoir useful when you need to use the slider, say, in a compact form.
+You should be aware, though, that values will have to be of a reasonable length (say from values -999 to 999). if they are longer (say floats with some digits), teir valu will overflow the cursors borders, resulting in a sub-optimal visual effect.
 
 Installation
 ------------
@@ -41,8 +43,8 @@ If you use SCSS & Compass you can include the source SCSS directly into your pro
 Demo
 ----
 
- - [Demo - Angular v.1.1.*](http://danielcrisp.github.io/angular-rangeslider/demo/)
- - [Legacy Demo - Angular v.1.0.*](http://danielcrisp.github.io/angular-rangeslider/demo/legacy.html)
+ - [Demo - Angular v.1.1.*](http://marcolino.github.io/angular-rangeslider/demo/)
+ - [Legacy Demo - Angular v.1.0.*](http://marcolino.github.io/angular-rangeslider/demo/legacy.html)
 
 GitHub Pages
 ------------
